@@ -11,6 +11,7 @@ export class AppComponent {
   public scroll: number = 0;
   public alto: number = 300;
   public ancho: number = 500;
+  public color: string = '';
   public mostrar: boolean = false;
   public imagen: string = 'https://media.istockphoto.com/photos/beautiful-little-ginger-kitten-sits-in-human-boats-on-the-setting-sun-picture-id1345472306?k=20&m=1345472306&s=612x612&w=0&h=hPOgnJ7zzQf3c5Pj0lq5Ujf46yyirfTmWM-6KA1iqc0='
   public sumar(n1: number, n2: number): number {
@@ -33,5 +34,9 @@ export class AppComponent {
   public capturarAncho(event: Event): void {
     const valor = Number.parseInt((event.target as HTMLInputElement).value)
     this.ancho = valor;
+  }
+  public capturarColor(event: Event): void {
+    const color = (event.target as HTMLInputElement).value;
+    this.color = color;
   }
 }

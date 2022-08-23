@@ -53,6 +53,26 @@
 
 <h1>NgClass y NgStyle</h1>
 <p>Boton para cambiar clases</p>
-<button (click)="mostrar = !mostrar" [class.rojo]="mostrar" [class.grande]="mostrar">Cambiar Clase</button>
+<button (click)="mostrar = !mostrar"
+[ngClass]="{
+  rojo:mostrar,
+  grande:mostrar
+}"
+>Cambiar Clase</button>
 {{ mostrar }}
-<h1 [class.esconder]="mostrar">Mensaje secreto</h1>
+<h1 [ngClass]="{
+  esconder:mostrar
+}" >Mensaje secreto</h1>
+<h2 [ngStyle]="{
+  'color': color,
+  'font-size.px': ancho
+}"
+>Hola soy un h2 con estilo</h2>
+<input
+type="color"
+[value]="color"
+(change)="capturarColor($event)"
+>
+{{ color }}
+
+<!--Cerrado las bases minimas de angular-->
