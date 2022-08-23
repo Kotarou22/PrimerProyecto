@@ -43,3 +43,10 @@
   Enim culpa cum assumenda officiis ipsa obcaecati, placeat quaerat quidem porro voluptates labore dolor quo consequatur
   doloremque. Dicta fugit excepturi soluta ipsam facilis ratione beatae ducimus. Nulla quas illum exercitationem!
 </section>
+<h1>Property Binding</h1>
+<progress [max]=" 100 " [value]="contador"></progress><br>
+<hr>
+<input type="number" [value]="alto" (input)="capturarAlto($event)">
+<input type="number" [value]="ancho" (input)="capturarAncho($event)">
+
+<img [src]="imagen" [height]="alto" [width]="ancho">

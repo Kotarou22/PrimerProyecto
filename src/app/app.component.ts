@@ -9,6 +9,9 @@ export class AppComponent {
   public nombre: string = 'Julio';
   public contador: number = 0;
   public scroll: number = 0;
+  public alto: number = 0;
+  public ancho: number = 0;
+  public imagen: string = 'https://media.istockphoto.com/photos/beautiful-little-ginger-kitten-sits-in-human-boats-on-the-setting-sun-picture-id1345472306?k=20&m=1345472306&s=612x612&w=0&h=hPOgnJ7zzQf3c5Pj0lq5Ujf46yyirfTmWM-6KA1iqc0='
   public sumar(n1: number, n2: number): number {
     return n1 + n2;
   }
@@ -21,5 +24,13 @@ export class AppComponent {
   }
   public scrollEn(event: Event): void {
     this.scroll = (event.target as Element).scrollTop;
+  }
+  public capturarAlto(event: Event): void {
+    const valor = Number.parseInt((event.target as HTMLInputElement).value)
+    this.alto = valor;
+  }
+  public capturarAncho(event: Event): void {
+    const valor = Number.parseInt((event.target as HTMLInputElement).value)
+    this.ancho = valor;
   }
 }
